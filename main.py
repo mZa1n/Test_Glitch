@@ -55,7 +55,7 @@ def give_admin():
                                            message='У пользователя уже имеются админ-права')
                 user = db_sess.query(User).filter(User.id == int(form.id.data))
                 if user:
-                    user.admin = 1
+                    user.admin = True
                     db_sess.commit()
                     return redirect('/profile')
             else:
